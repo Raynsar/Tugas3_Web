@@ -1,34 +1,37 @@
-// Smooth scroll untuk nav
-document.querySelectorAll(".navbar a").forEach((link) => {
+// Smooth scroll untuk semua link yang menuju section (#...)
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
+    const href = link.getAttribute("href");
+    if (!href || href === "#") return;
+
+    const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   });
 });
 
-// Toggle light/dark mode
-const btnToggle = document.getElementById("toggle-theme");
-btnToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-});
-
-// Simulasi submit form
+// Form kontak (simulasi)
 const form = document.getElementById("contact-form");
 const statusText = document.getElementById("form-status");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const nama = document.getElementById("nama").value.trim();
-  const pesan = document.getElementById("pesan").value.trim();
+if (form && statusText) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  if (!nama || !pesan) {
-    statusText.textContent = "Nama dan pesan wajib diisi.";
-    return;
-  }
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
 
-  statusText.textContent = `Terima kasih, ${nama}. Pesanmu sudah tercatat (simulasi).`;
-  form.reset();
-});
+    if (!nama || !pesan) {
+      statusText.textContent = "Nama dan pesan wajib diisi.";
+      return;
+    }
+
+    statusText.textContent = `Terima kasih, ${nama}. Pesanmu sudah tercatat (simulasi).`;
+    form.reset();
+  });
+}

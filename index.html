@@ -12,10 +12,12 @@
       <h1>Adifa Ar-Rayan</h1>
       <p class="tagline">Mahasiswa Informatika · Web & Mobile Enthusiast</p>
       <div class="hero-buttons">
+        <!-- Download CV (pastikan file PDF-nya ada dan namanya sama) -->
+        <a href="cv-adifa-ar-rayan.pdf" class="btn ghost" download>Download CV</a>
         <a href="#contact" class="btn primary">Hubungi Saya</a>
-        <button id="toggle-theme" class="btn ghost">Mode Gelap / Terang</button>
       </div>
     </div>
+
     <div class="hero-right">
       <!-- FOTO PROFIL -->
       <img src="profile.jpg" alt="Foto Profil Adifa Ar-Rayan" class="profile-pic">
@@ -47,17 +49,18 @@
       <h2>Pendidikan</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-year">2023 - Sekarang</div>
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h3>Universitas Muhammadiyah Malang</h3>
-            <p>Program Studi Informatika</p>
+            <p>Informatika · 2023 - Sekarang</p>
           </div>
         </div>
+
         <div class="timeline-item">
-          <div class="timeline-year">2019 - 2022</div>
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>SMA/SMK (Isi Sendiri)</h3>
-            <p>Jurusan (misal IPA / RPL, dll)</p>
+            <h3>MAN Madrasah Aliyah Negeri 1 Pagaralam</h3>
+            <p>2020 - 2023</p>
           </div>
         </div>
       </div>
@@ -69,6 +72,14 @@
       <div class="skill-grid">
         <div class="skill-item">
           <h3>Bahasa Pemrograman</h3>
+          <ul>
+            <li>Python dasar</li>
+            <li>Java dasar</li>
+            <li>C/C++ dasar</li>
+          </ul>
+        </div>
+        <div class="skill-item">
+          <h3>Web & Mobile</h3>
           <ul>
             <li>HTML, CSS, JavaScript</li>
             <li>PHP dasar</li>
@@ -101,23 +112,25 @@
         <article class="project-card">
           <h3>Website Wedding Organizer</h3>
           <p>
-            Website company profile untuk jasa wedding organizer dengan
-            fitur form konsultasi dan integrasi WhatsApp.
+            Landing page modern untuk jasa wedding organizer dengan section layanan, paket, 
+            dan form konsultasi.
           </p>
-          <span class="badge">HTML · CSS · JS</span>
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
         </article>
 
         <article class="project-card">
-          <h3>App Laundry Service</h3>
+          <h3>CV Online</h3>
           <p>
-            Aplikasi mobile sederhana untuk pemesanan laundry, fokus pada UI 
-            yang clean dan mudah digunakan.
+            Website CV online responsif sebagai portofolio diri untuk melamar magang atau kerja.
           </p>
-          <span class="badge">Flutter</span>
+          <span class="badge">Frontend</span>
+          <span class="badge">UI/UX</span>
         </article>
 
         <article class="project-card">
-          <h3>Roblox Map Expedition</h3>
+          <h3>Map Pendakian Roblox</h3>
           <p>
             Map pendakian dengan beberapa checkpoint, sistem leaderboard,
             dan mekanik game custom.
@@ -132,18 +145,24 @@
       <h2>Kontak</h2>
       <div class="contact-grid">
         <div>
-          <p><strong>Email:</strong> isi@email.com</p>
-          <p><strong>Telepon:</strong> 08xxxxxxxxxx</p>
-          <p><strong>Domisili:</strong> Malang, Indonesia</p>
+          <p><strong>Email:</strong> Adifaarrayan15@gmail.com</p>
+          <p><strong>WhatsApp:</strong> 082214145814</p>
+          <p class="muted">
+            Silakan hubungi saya untuk kerjasama project, magang, atau diskusi seputar 
+            pengembangan aplikasi.
+          </p>
         </div>
+
         <form id="contact-form">
-          <label>Nama
-            <input type="text" id="nama" required />
-          </label>
-          <label>Pesan
-            <textarea id="pesan" rows="3" required></textarea>
-          </label>
-          <button type="submit" class="btn primary">Kirim (Simulasi)</button>
+          <div class="field">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" placeholder="Masukkan nama lengkap" />
+          </div>
+          <div class="field">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" rows="4" placeholder="Tulis pesanmu di sini"></textarea>
+          </div>
+          <button type="submit" class="btn primary">Kirim </button>
           <p id="form-status" class="status-text"></p>
         </form>
       </div>

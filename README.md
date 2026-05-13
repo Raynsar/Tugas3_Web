@@ -2,7 +2,7 @@
 
 ## Identitas
 
-Nama: JekkG05  
+Nama: Ahmad Zaky Guntur  
 NIM: 202310370311031  
 Topik: Analisis pelanggaran prinsip SOLID pada kode booking lapangan  
 

@@ -6,6 +6,8 @@
   --text: #e5e7eb;
   --muted: #9ca3af;
   --border: #1f2933;
+  --error: #f87171;
+  --success: #34d399;
 }
 
 * {
@@ -25,8 +27,7 @@ body {
   min-height: 100vh;
 }
 
-/* HERO */
-
+/* ── HERO ─────────────────────────────────────────────────── */
 .hero {
   max-width: 1000px;
   margin: 32px auto 16px;
@@ -58,8 +59,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* FOTO PROFIL */
-
+/* ── FOTO PROFIL ──────────────────────────────────────────── */
 .hero-right {
   display: flex;
   justify-content: center;
@@ -74,8 +74,7 @@ body {
   box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
-/* NAV */
-
+/* ── NAVBAR ───────────────────────────────────────────────── */
 .navbar {
   position: sticky;
   top: 0;
@@ -99,8 +98,7 @@ body {
   color: var(--accent);
 }
 
-/* MAIN LAYOUT */
-
+/* ── MAIN LAYOUT ──────────────────────────────────────────── */
 main {
   max-width: 1000px;
   margin: 0 auto 32px;
@@ -125,8 +123,7 @@ main {
   line-height: 1.5;
 }
 
-/* TIMELINE */
-
+/* ── TIMELINE ─────────────────────────────────────────────── */
 .timeline {
   margin-top: 10px;
   border-left: 1px solid rgba(148, 163, 184, 0.7);
@@ -164,8 +161,7 @@ main {
   font-size: 0.85rem;
 }
 
-/* SKILL */
-
+/* ── SKILL ────────────────────────────────────────────────── */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -192,8 +188,7 @@ main {
   color: var(--muted);
 }
 
-/* PROJECT */
-
+/* ── PROJECT ──────────────────────────────────────────────── */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -231,8 +226,7 @@ main {
   margin-right: 4px;
 }
 
-/* KONTAK */
-
+/* ── KONTAK ───────────────────────────────────────────────── */
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 1.1fr;
@@ -257,19 +251,32 @@ textarea {
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--text);
+  transition: border-color 0.2s;
 }
 
 input:focus,
 textarea:focus {
-  outline: 1px solid var(--accent);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
+/* Status text warna dinamis lewat JS (var --error / --success) */
+.status-text {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  min-height: 18px;
+  transition: color 0.2s;
+}
+
+/* ── BUTTON ───────────────────────────────────────────────── */
 .btn {
   border-radius: 999px;
   padding: 8px 16px;
   font-size: 0.9rem;
   border: 1px solid transparent;
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
 .btn.primary {
@@ -285,17 +292,10 @@ textarea:focus {
 }
 
 .btn:hover {
-  opacity: 0.92;
+  opacity: 0.88;
 }
 
-.status-text {
-  font-size: 0.8rem;
-  margin-top: 6px;
-  color: var(--muted);
-}
-
-/* FOOTER */
-
+/* ── FOOTER ───────────────────────────────────────────────── */
 .footer {
   text-align: center;
   padding: 16px 0 24px;
@@ -303,8 +303,7 @@ textarea:focus {
   color: var(--muted);
 }
 
-/* RESPONSIVE */
-
+/* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
